@@ -20,7 +20,8 @@ app.all('*', (req, res) => {
     res.status(404).send("Page Not Found!");
 })
 
-app.listen(5020, () => {
-    console.log('Server started at http://localhost:5020');
+const PORT = process.env.PORT || 5060;
+app.listen(PORT, () => {
+    console.log(`Server started at http://localhost:${PORT}`);
     connectToDB();
 })
